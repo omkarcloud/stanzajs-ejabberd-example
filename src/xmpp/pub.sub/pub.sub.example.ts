@@ -50,6 +50,7 @@ export async function pubsubExample() {
 function listenMultipleForPublishEvents(nodename: string) {
     ['albus', 'hermione'].map(a => {
         onStartedSession(async (ag) => {
+            ag.use(plugin)
             await subscribe(ag, nodename)
             listenForPublishEvents(ag)
         }, createClientAndConnect(a, false))
