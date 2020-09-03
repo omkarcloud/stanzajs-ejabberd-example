@@ -1,0 +1,12 @@
+version: '3'
+services:
+  xmpp-server:
+    image: ejabberd/ecs
+    container_name: xmpp-server
+    volumes:
+      - './ejabberd.yml:/home/ejabberd/conf/ejabberd.yml'
+    restart: always
+    ports:
+      - 5443:5443
+      - 5280:5280
+    network_mode: 'host'

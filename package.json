@@ -13,7 +13,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "@types/js-beautify": "^1.11.0",
+    "@types/lodash": "^4.14.161",
+    "js-beautify": "^1.13.0",
+    "loadash": "^1.0.0",
+    "stanza": "^12.14.1"
   },
   "scripts": {
     "start": "react-scripts start",
