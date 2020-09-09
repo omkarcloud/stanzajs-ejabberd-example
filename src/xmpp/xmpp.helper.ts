@@ -1,6 +1,7 @@
 import * as XMPP from 'stanza'
 import { Agent, } from 'stanza'
 import { environment, transports } from './env'
+import { plugin } from './pub.sub/utils/pub.sub.plugin'
 /**
  *  Good to set log to true in case you are dubugging 
  *  The most common problem is that the connection not getting established or auth failure in that case it silently fails without throwing any errors
@@ -37,6 +38,7 @@ export function onStartedSession(params: (ag: Agent) => any, ag: Agent) {
         await ag.getRoster()
         ag.sendPresence()
         ag.enableCarbons()
+        ag.use(plugin)
         params(ag)
     })
     return ag

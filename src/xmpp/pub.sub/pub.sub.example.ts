@@ -10,7 +10,6 @@ import { wait, timer600 } from '../../utils/async.utils'
 export async function pubsubExample() {
     onStartedSession(async (ag) => {
         // Use Pubsub Plugin necessary
-        ag.use(plugin)
         const nodename = _.random(1000000).toString()
         const pubsub = environment.pubSubService
 
