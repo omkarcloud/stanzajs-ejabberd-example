@@ -21,6 +21,7 @@ export function createClientAndConnect(clientname: string) {
 export function onStartedSession(params: (ag: Agent) => any, ag: Agent) {
     ag.on('session:started', async () => {
         ag.sendPresence()
+        // ONly is using pubsub
         ag.use(plugin)
         params(ag)
     })
