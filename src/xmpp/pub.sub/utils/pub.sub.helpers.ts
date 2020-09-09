@@ -17,7 +17,6 @@ export async function subscribe(ag: Agent, nodename: string, pubsub = environmen
 export function listenForPublishEvents(ag: XMPP.Agent) {
 
     ag.on('pubsub:published', async (msg,) => {
-
         const jid = ag.config.jid as string
         console.log(`${jid} recieved ${beautify(msg.pubsub)}`)
     })
@@ -28,9 +27,4 @@ export function publishToNode(ag: XMPP.Agent, pubsub: string, nodename: string, 
 
         value
     })
-}
-// Only publisher could access it 
-export async function getNodeSubscribers(ag: Agent, nodename: string, pubsub = environment.pubSubService) {
-    const subs = await ag.getNodeSubscribers(pubsub, nodename)
-    return subs.pubsub!.subscriptions
 }
