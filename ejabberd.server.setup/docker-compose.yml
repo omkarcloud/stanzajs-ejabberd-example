@@ -9,4 +9,4 @@ services:
     ports:
       - 5443:5443
       - 5280:5280
-    network_mode: 'host'
+   # network_mode: 'host'
